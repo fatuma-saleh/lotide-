@@ -1,4 +1,4 @@
-const eqArrays = function(arr1, arr2) {
+const eqArrays = function (arr1, arr2) {
   let flag = false;
   for (let i = 0; i < arr1.length; i++) {
     for (let j = 0; j < arr2.length; j++) {
@@ -18,4 +18,4 @@ const eqArrays = function(arr1, arr2) {
   }
 
 };
-eqArrays([1, 2, 3], [1, 2, 3]);
+eqArrays([1, 2, 3], [1, 2, "3"]);
