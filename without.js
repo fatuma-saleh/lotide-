@@ -1,4 +1,13 @@
 const assertArraysEqual = function (arr1, arr2) {
+  if (eqArrays(arr1, arr2)) {
+    console.log(`✅✅✅ Assertion Passed: ${arr1}===${arr2}`);
+  } else {
+    console.log(`❌❌❌ Assertion failed: ${arr1}!==${arr2}`);
+  }
+
+};
+
+const eqArrays = function (arr1, arr2) {
   let flag = false;
   if (arr1.length === arr2.length) {
 
@@ -12,12 +21,7 @@ const assertArraysEqual = function (arr1, arr2) {
       }
     }
   }
-  if (flag === true) {
-    console.log(`✅✅✅ Assertion Passed: ${arr1}===${arr2}`);
-  } else {
-    console.log(`❌❌❌ Assertion failed: ${arr1}!==${arr2}`);
-  }
-
+  return flag;
 };
 
 const without = function (arr1, arr2) {
@@ -42,7 +46,7 @@ const without = function (arr1, arr2) {
       }
     }
   }
-  //console.log(finalArr);
+  //console.log("check",arr1);
   return finalArr;
 };
 

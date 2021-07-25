@@ -1,19 +1,5 @@
-const assertArraysEqual = function(arr1, arr2) {
-  let flag = false;
-  if (arr1.length === arr2.length) {
-  
-    for (let i = 0; i < arr1.length; i++) {
-      if (arr1[i] !== arr2[i]) {
-        flag = false;
-        break;
-      } else {
-        flag = true;
-        
-      }
-    }
-  }
-  // return flag;
-  if (flag === true) {
+const assertArraysEqual = function (arr1, arr2) {
+  if (eqArrays(arr1, arr2)) {
     console.log(`✅✅✅ Assertion Passed: ${arr1}===${arr2}`);
   } else {
     console.log(`❌❌❌ Assertion failed: ${arr1}!==${arr2}`);
@@ -21,7 +7,24 @@ const assertArraysEqual = function(arr1, arr2) {
 
 };
 
-const flatten = function(nesArr) {
+const eqArrays = function (arr1, arr2) {
+  let flag = false;
+  if (arr1.length === arr2.length) {
+
+    for (let i = 0; i < arr1.length; i++) {
+
+      if (arr1[i] !== arr2[i]) {
+        flag = false;
+        break;
+      } else {
+        flag = true;
+      }
+    }
+  }
+  return flag;
+};
+
+const flatten = function (nesArr) {
   let flaArr = [];
   //let flag
   for (let i = 0; i < nesArr.length; i++) {
@@ -37,9 +40,9 @@ const flatten = function(nesArr) {
       }
     }
   }
-  
+
   return flaArr;
 };
 
-assertArraysEqual(flatten([1, 2,[8], [3, 4], 5]),[1, 2,3,4,5]);
-assertArraysEqual(flatten([[1,6],4,[]]),[1,6,4]);
+assertArraysEqual(flatten([1, 2, [8], [3, 4], 5]), [1, 2, 8, 4, 5]);
+assertArraysEqual(flatten([[1, 6], 4, []]), [1, 6, 4]);
