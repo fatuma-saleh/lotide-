@@ -12,7 +12,7 @@ const countLetters = function (string) {
       if (objLetters[str]) {
         objLetters[str] += 1;
 
-      } else {
+      } else {    
         objLetters[str] = 1;
       }
     }
