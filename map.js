@@ -1,29 +1,6 @@
 
-const assertArrayEqual = function(arr1, arr2) {
-  if (eqArrays(arr1, arr2)) {
-    console.log(`✅✅✅ Assertion Passed: ${arr1}===${arr2}`);
-  } else {
-    console.log(`❌❌❌ Assertion failed: ${arr1}!==${arr2}`);
-  }
-
-};
-
-const eqArrays = function(arr1, arr2) {
-  let flag = false;
-  if (arr1.length === arr2.length) {
-
-    for (let i = 0; i < arr1.length; i++) {
-
-      if (arr1[i] !== arr2[i]) {
-        flag = false;
-        break;
-      } else {
-        flag = true;
-      }
-    }
-  }
-  return flag;
-};
+const assertArrayEqual = require('./assertArraysEqual');
+//const eqArrays = require('./eqArrays')
 
 const map = function(array, callback) {
   if (Array.isArray(array)) {
@@ -36,6 +13,7 @@ const map = function(array, callback) {
   }
 
 };
+module.exports = map;
 
 
 const words = ["ground", "control", "to", "major", "tom"];
@@ -48,8 +26,6 @@ const results2 = map(numbers, function(num) {
   return num * num;
 });
 assertArrayEqual(results2, [1, 4, 9, 16, 25]);
-
-
 const days = ["Monday", "Tuesday", "Wednesday"];
 const results3 = map(days, day => day.length);
 assertArrayEqual(results3, [6, 7, 9]);

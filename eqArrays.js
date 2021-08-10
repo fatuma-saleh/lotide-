@@ -11,18 +11,6 @@ const eqArrays = function(arr1, arr2) {
   return false;
 };
 
-//recursive 
-// if (arr1.length === arr2.length) {
 
-
-//   array1.forEach((item) => {
-//     if (Array.isArray(item)) {
-//       // Print out all it's items individually
-//       printItems(item);
-//     } else {
-//       console.log(item);
-//     }
-//   });
-// }
 module.exports = eqArrays;
 
